@@ -18,6 +18,16 @@ module Valkyrie::Persistence::Postgres
         Valkyrie::Persistence::Postgres::Queries::FindByIdQuery.new(id).run
       end
 
+      # (see Valkyrie::Persistence::Memory::QueryService#find_by_title)
+      def find_by_title(title:)
+        Valkyrie::Persistence::Postgres::Queries::FindByTitleQuery.new(title).run
+      end
+      
+      # (see Valkyrie::Persistence::Memory::QueryService#find_by_cornell_id)
+      def find_by_cornell_id(cornell_id:)
+        Valkyrie::Persistence::Postgres::Queries::FindByCornellIdQuery.new(cornell_id).run
+      end
+      
       # (see Valkyrie::Persistence::Memory::QueryService#find_members)
       def find_members(resource:)
         Valkyrie::Persistence::Postgres::Queries::FindMembersQuery.new(resource).run

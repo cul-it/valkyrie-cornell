@@ -17,6 +17,15 @@ module Valkyrie::Persistence::Memory
       cache[id] || raise(::Valkyrie::Persistence::ObjectNotFoundError)
     end
 
+    def find_by_title(title:)
+      cache[title] || raise(::Valkyrie::Persistence::ObjectNotFoundError)
+    end
+ 
+    def find_by_cornell_id(cornell_id:)
+      cache[cornell_id] || raise(::Valkyrie::Persistence::ObjectNotFoundError)
+    end
+
+    
     # @return [Array<Valkyrie::Resource>] All objects in the persistence backend.
     def find_all
       cache.values

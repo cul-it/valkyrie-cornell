@@ -14,6 +14,14 @@ module Valkyrie::Persistence::ActiveFedora
         Valkyrie::Persistence::ActiveFedora::Queries::FindByIdQuery.new(id).run
       end
 
+      def find_by_title(title:)
+        Valkyrie::Persistence::ActiveFedora::Queries::FindByTitleQuery.new(title).run
+      end
+
+      def find_by_cornell_id(cornell_id:)
+        Valkyrie::Persistence::ActiveFedora::Queries::FindByTitleQuery.new(cornell_id).run
+      end
+
       def find_members(resource:)
         Valkyrie::Persistence::ActiveFedora::Queries::FindMembersQuery.new(resource).run
       end

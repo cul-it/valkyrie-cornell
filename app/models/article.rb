@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class Book < Valkyrie::Resource
+class Article < Valkyrie::Resource
   include Valkyrie::Resource::AccessControls
   attribute :id, Valkyrie::Types::ID.optional
   attribute :title, Valkyrie::Types::Set
@@ -55,10 +55,17 @@ class Book < Valkyrie::Resource
   attribute :rightsHolder, Valkyrie::Types::Set
   attribute :subject, Valkyrie::Types::Set
   attribute :subject_URI, Valkyrie::Types::Set
-   
+  attribute :date, Valkyrie::Types::Set
+  attribute :physicalSource, Valkyrie::Types::Set
   
-  
-  
+  attribute :copyrightDate, Valkyrie::Types::Set
+  attribute :issuingBody, Valkyrie::Types::Set
+  attribute :extent, Valkyrie::Types::Set
+  attribute :repository, Valkyrie::Types::Set
+  attribute :issue_type, Valkyrie::Types::Set
+  attribute :issue_type_URI, Valkyrie::Types::Set
+  attribute :placeOfPublication, Valkyrie::Types::Set
+
   
   
 end

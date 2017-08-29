@@ -15,6 +15,16 @@ module Valkyrie::Persistence::Solr
       Valkyrie::Persistence::Solr::Queries::FindByIdQuery.new(id, connection: connection, resource_factory: resource_factory).run
     end
 
+    # (see Valkyrie::Persistence::Memory::QueryService#find_by_title)
+    def find_by_title(title:)
+      Valkyrie::Persistence::Solr::Queries::FindByTitleQuery.new(title, connection: connection, resource_factory: resource_factory).run
+    end
+    
+    # (see Valkyrie::Persistence::Memory::QueryService#find_by_title)
+    def find_by_cornell_id(cornell_id:)
+      Valkyrie::Persistence::Solr::Queries::FindByTitleQuery.new(cornell_id, connection: connection, resource_factory: resource_factory).run
+    end
+    
     # (see Valkyrie::Persistence::Memory::QueryService#find_all)
     def find_all
       Valkyrie::Persistence::Solr::Queries::FindAllQuery.new(connection: connection, resource_factory: resource_factory).run

@@ -9,7 +9,10 @@ module Valkyrie::Persistence::Postgres
       def to_resource(orm_object)
         ::Valkyrie::Persistence::Postgres::DynamicKlass.new(orm_object.all_attributes)
       end
-
+      
+      def return_string(string)
+        return string
+      end
       # @param resource [Valkyrie::Resource] Model to be converted to ActiveRecord.
       # @return [Valkyrie::Persistence::Postgres::ORM::Resource] ActiveRecord
       #   resource for the Valkyrie resource.
